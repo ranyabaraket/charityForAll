@@ -1,0 +1,186 @@
+
+<section class="h-100 bg-light">
+
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col">
+        <div class="card card-registration my-4">
+          <div class="row g-0">
+            <div class="col-xl-6 d-none d-xl-block">
+              <img src="https://img.freepik.com/free-vector/people-carrying-donation-charity-related-icons_53876-43091.jpg"
+                alt="" class="img-fluid"
+                style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;height:100%"/>
+            </div>
+            <div class="col-xl-6">
+              <div class="card-body p-md-5 text-black">
+                <h3 class="mb-5 text-uppercase">Register</h3>
+
+                <div class="col-md-6 mb-4">
+
+                  <div class="col-xl-6">
+
+                          <select  #teams (change)="onSelected(teams.value)" size=1 style="width:450px" >
+                              <option selected disabled value="">S'incrire en tant que (Donneur/Association)</option>
+                              <option>Donneur</option>
+                              <option>Association</option>
+                          </select>
+                      </div>
+
+
+
+
+              </div>
+
+                  <div *ngIf="selectedTeam=='Donneur'">
+                  <simple-notifications></simple-notifications>
+
+
+              <div class="row">
+                      <div>
+
+
+                      </div>
+                      <div class="form-outline mb-4">
+                          <input type="text" id="form3Example8" class="form-control form-control-lg" placeholder="Username" name="username"  [(ngModel)]="user.username"/>
+
+                        </div>
+
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input type="text" id="form3Example1m" class="form-control form-control-lg" placeholder="Prenom" name="prenom" [(ngModel)]="user.prenom" />
+
+                      </div>
+                    </div>
+
+
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input type="text" id="form3Example1n" class="form-control form-control-lg" placeholder="Nom" [(ngModel)]="user.nom"/>
+
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input type="date" id="form3Example1m1" class="form-control form-control-lg" />
+
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input type="text" id="form3Example1n1" class="form-control form-control-lg" placeholder="Telephone" [(ngModel)]="user.telephone"/>
+
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <input type="text" id="form3Example8" class="form-control form-control-lg" placeholder="Address" [(ngModel)]="user.addresse"/>
+
+                  </div>
+                  <div class="form-outline mb-4">
+                      <input type="text" id="form3Example8" class="form-control form-control-lg" placeholder="Email" name="email" [(ngModel)]="user.email"/>
+
+                    </div>
+                    <div class="form-outline mb-4">
+                      <input type="text" id="form3Example8" class="form-control form-control-lg" placeholder="Passsword" name="password" [(ngModel)]="user.password"/>
+
+                    </div>
+
+
+
+
+
+
+
+                  <div class="d-flex justify-content-end pt-3">
+
+                    <button type="button" class="btn btn-warning btn-lg ms-2" (click)="registerDonor()">Submit form</button>
+                  </div>
+                </div>
+
+
+                <div *ngIf="selectedTeam=='Association'">
+
+
+
+                  <div class="row">
+                      <div>
+
+
+                      </div>
+                      <div class="form-outline mb-4">
+                          <input type="text" id="form3Example8" class="form-control form-control-lg" placeholder="Username" name="username"  [(ngModel)]="assoc.username"/>
+
+                        </div>
+
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input type="text" id="form3Example1m" class="form-control form-control-lg" placeholder="Nom Association" name="prenom" [(ngModel)]="assoc.nom" />
+
+                      </div>
+                    </div>
+
+
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input type="text" id="form3Example1n" class="form-control form-control-lg" placeholder="Domaine d'activité" [(ngModel)]="assoc.domaineActivite"/>
+
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input type="date" id="form3Example1m1" class="form-control form-control-lg" />
+
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input type="text" id="form3Example1n1" class="form-control form-control-lg" placeholder="Telephone" [(ngModel)]="assoc.telephone"/>
+
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <input type="text" id="form3Example8" class="form-control form-control-lg" placeholder="Siege de l'Association" [(ngModel)]="assoc.siege"/>
+
+                  </div>
+                  <div class="form-outline mb-4">
+                      <input type="text" id="form3Example8" class="form-control form-control-lg" placeholder="Email" name="email" [(ngModel)]="assoc.email"/>
+
+                    </div>
+                    <div class="form-outline mb-4">
+                      <input type="password" id="form3Example8" class="form-control form-control-lg" placeholder="Passsword" name="password" [(ngModel)]="assoc.password"/>
+
+                    </div>
+
+
+
+
+
+
+
+                  <div class="d-flex justify-content-end pt-3">
+
+                    <button type="button" class="btn btn-warning btn-lg ms-2" (click)="registerAssoc()">Submit form</button>
+                  </div>
+                </div>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
