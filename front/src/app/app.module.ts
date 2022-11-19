@@ -20,7 +20,7 @@ import { HomeComponent } from './components/home/home.component';
 import { AssociationsComponent } from './components/associations/associations.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 
-
+import { CarouselModule } from 'ngx-owl-carousel-o';
 import { SimpleNotificationsModule } from 'angular2-notifications';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
@@ -36,6 +36,12 @@ import { DonneurProfileComponent } from './components/donneur-profile/donneur-pr
 import { DonneursComponent } from './components/donneurs/donneurs.component';
 import { ProfileAssocComponent } from './components/profile-assoc/profile-assoc.component';
 import { ActualitesComponent } from './components/actualites/actualites.component';
+import { HeaderComponent } from './components/header/header.component';
+import { AccueilComponent } from './components/accueil/accueil.component';
+import { VisionComponent } from './components/vision/vision.component';
+import { MissionComponent } from './components/mission/mission.component';
+import { ActualitesListComponent } from './components/actualites-list/actualites-list.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 
@@ -57,6 +63,12 @@ import { ActualitesComponent } from './components/actualites/actualites.componen
       DonneursComponent,
       ProfileAssocComponent,
       ActualitesComponent,
+      HeaderComponent,
+      AccueilComponent,
+      VisionComponent,
+      MissionComponent,
+      ActualitesListComponent,
+      FooterComponent,
 
 
 
@@ -68,12 +80,14 @@ import { ActualitesComponent } from './components/actualites/actualites.componen
   imports: [
     BrowserModule,
     AppRoutingModule,
+    CarouselModule,
     HttpClientModule,
     FormsModule,
     NgbModule,
 
     FlashMessagesModule.forRoot(),
      NgbModule,
+
      BrowserAnimationsModule,
      MatButtonModule,
     MatDividerModule,

@@ -33,8 +33,11 @@
     "rxjs": "~6.6.0",
     "rxjs-compat": "^6.6.7",
     "tslib": "^2.3.0",
+    "ngx-owl-carousel-o": "^6.0.1",
     "url-polyfill": "^1.1.12",
-    "zone.js": "~0.11.4"
+    "zone.js": "~0.11.4",
+    "@fontsource/manrope": "^4.5.12",
+    "angular-bootstrap-md": "^14.0.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~12.2.7",

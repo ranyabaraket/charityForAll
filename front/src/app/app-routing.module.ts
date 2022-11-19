@@ -1,3 +1,4 @@
+import { AccueilComponent } from './components/accueil/accueil.component';
 import { ActualitesComponent } from './components/actualites/actualites.component';
 import { ProfileAssocComponent } from './components/profile-assoc/profile-assoc.component';
 import { DonneursComponent } from './components/donneurs/donneurs.component';
@@ -26,7 +27,7 @@ const routes: Routes = [
 {path:"Register",component:RegisterComponent},
   {path : "EspaceDonneur/profile",component:ProfileDonneurComponent},
 
-  {path : "",component:HomeComponent},
+  {path : "",component:AccueilComponent},
 
 
 

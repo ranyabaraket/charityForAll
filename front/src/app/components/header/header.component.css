@@ -1,0 +1,213 @@
+
+.fixed {
+  position: fixed;
+
+  transition: 0.2s linear;
+  top: 0px;
+  background-color:white;
+
+  z-index: 1;
+}
+
+.nofixed {
+  position: static;
+  transition: 0.2s linear;
+  top: -50px;
+  background-color: transparent;
+}
+.container{
+  margin-top: 2px;
+  display: flex;
+
+  justify-content: first baseline;
+  flex-wrap: nowrap;
+width: 100%;
+}
+.header{
+  padding-top: 1%;
+  width: 100%;
+  background: no-repeat center center;
+  background-size: cover;
+  position: relative;
+  z-index: 100;
+
+  background-image: url("../../../assets/images/bg4.jpg");
+  background-attachment: fixed;
+  position: relative;
+  width: 100%;
+}
+.nav-link{
+  white-space: nowrap;
+  z-index:-2;
+  font-size: 20px;
+  font-weight: bolder;
+  margin-left: 15px;
+  margin-right: 10px;
+
+
+}
+
+
+
+.btn-trial{
+  border-radius: 50%;
+  font-weight: 500  ;
+  height: 45px;
+  width: 110px;
+  padding: 15px,15px,15px,15px;
+  border: 0cm;
+  margin-left: 20px;
+}
+.navbar{
+  width: 100%;
+
+}
+
+
+.itemFixed{
+
+  color: black;
+
+}
+
+.itemNoFixed{
+
+  color: white;
+}
+
+
+.btnFixed{
+  background-color: #747ed1;
+  color: white;
+}
+
+.btnoFixed{
+  background-color: white;
+}
+
+
+
+#principaleLeft h1{
+
+  color: white;
+  font-family: "Manrope";
+  font-size: 44px;
+  font-weight: bold;
+  line-height: 60px;
+  animation-name: slideInDown;
+  animation-duration: 700ms;
+  animation-timing-function: ease;
+  animation-delay: 600ms;
+  animation-direction: normal;
+  animation-fill-mode: both;
+
+}
+
+
+#principale{
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  flex-wrap: wrap;
+
+}
+#principaleLeft{
+flex: 1;
+align-items: center;
+margin-left: 100px;
+font-family: "Manrope";
+  font-size: 21px;
+}
+#principaleLeft  p{
+  margin-top: 20px;
+  }
+
+
+
+
+
+
+#principaleLeft p{
+
+  color: white;
+  line-height: 50px;
+
+}
+.ExploreAndContact{
+
+  display: flex;
+  font-weight: 700;
+  line-height: 1.7;
+  letter-spacing: -.01rem;
+  margin-top: 30px;
+
+
+}
+ .explore {
+  border: solid;
+margin-right: 15px;
+    color: #343F52;
+    background-color: #fff;
+    border-color: #fff;
+    border-radius: 50rem!important;
+    padding:10px 24px;
+    font-family: "Manrope";
+  font-size: 17px;
+  font-weight: bold;
+  transform-origin: 0px;
+
+
+}
+.contact{
+
+  color: #fff;
+    background-color: transparent;
+    border-color: #fff;
+    border: solid;
+    border-radius: 50rem!important;
+    padding:10px 24px;
+    font-family: "Manrope";
+  font-size: 17px;
+  font-weight: bold;
+  transform-origin: 0px;
+
+}
+
+.explore:hover{
+  animation-duration: 2s;
+  animation-name: transis;
+  -webkit-transition: transform 300ms ;
+  transform: translateY(-5px) ;
+
+
+}
+
+.contact:hover{
+  animation-duration: 2s;
+  animation-name: transis;
+  -webkit-transition: transform 300ms ;
+  transform: translateY(-5px) ;
+  background-color: white;
+  color: #343F52;
+  border-color: white;
+
+
+}
+
+
+.aboutsIMG{
+  width: 537.5px;
+  height: 514.13px;
+
+}
+.carousel{
+  margin-top: 70px;
+  margin-bottom: 100px;
+  width: 537.5px;
+  height: 500;
+  z-index: 0;
+margin-right: 100px;
+
+}

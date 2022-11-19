@@ -1,0 +1,52 @@
+<section  >
+  <h2 class="title">
+    Actualités
+  </h2>
+  <h3 class="subtitles">
+   Decouvrir nos actualités
+  </h3>
+
+  <div class="cardss">
+
+
+    <div class="container">
+      <div class="row" >
+
+
+
+
+        <div class="col-sm-6 col-md-4 col-lg-3 mt-4 cd"*ngFor="let act of acts"  >
+          <div class="card card-inverse card-info">
+              <img class="card-img-top" [src]="act.image" style="width:100% ;height: 100%;">
+              <div class="card-block">
+
+                  <h4 class="card-title">{{act.nom}}</h4>
+                  <div class="card-text">
+                    {{act.designation}}
+                  </div>
+              </div>
+              <div class="card-footer">
+                  <small>14 Avril 2021</small>
+
+              </div>
+          </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+      </div>
+</div>
+
+
+
+  </div>
+
+  </section>
+

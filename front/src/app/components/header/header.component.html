@@ -1,0 +1,70 @@
+<div class="header bg-overlay">
+  <nav class="navbar navbar-expand-sm " (scroll)="onscroll()" [ngClass]="navbarfixed?'fixed':'nofixed'">
+
+    <div class="container">
+      <div class="logo"><a href="#"><img src="{{cheminLogo}}" alt="image" style="height:70px ;width:220px" /></a></div>
+
+      <div class="nav-items">
+        <ul class="navbar-nav" [ngClass]="navbarfixed?'itemFixed':'itemNoFixed'">
+
+
+            <li class="nav-item active"  >
+                <a class="nav-link" href="#" [ngClass]="navbarfixed?'itemFixed':'itemNoFixed'">ACCUEIL</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" [ngClass]="navbarfixed?'itemFixed':'itemNoFixed'">ASSOCIATIONS</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" [ngClass]="navbarfixed?'itemFixed':'itemNoFixed'">ACTUALITES</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" [ngClass]="navbarfixed?'itemFixed':'itemNoFixed'">CONTACT</a>
+            </li>
+
+
+
+          <button  class="rounded-pill btn-trial" [ngClass]="navbarfixed?'btnFixed':'btnoFixed'" routerLink="/Register">S'inscrire</button>
+        </ul></div>
+
+    </div>
+
+  </nav>
+
+
+  <section id="principale">
+    <div id="principaleLeft">
+        <h1>Charity For All  </h1>
+
+        <p>EVEN SMALL DONATIONS CAN GIVE BIG SMILES
+          <br>
+          Lorsque vous jetez vos vêtements, ils n'ont aucune chance <br>d'atteindre les personnes qui en ont le plus besoin.
+        </p>
+            <div class="ExploreAndContact">
+                <button class="explore" routerLink="/EspaceDonneur/login">Sign In</button>
+                <button class="contact">Contact Us</button>
+            </div>
+
+    </div>
+
+
+      <div class="carousel">
+        <owl-carousel-o [options]="customOptions" >
+
+
+          <ng-template carouselSlide *ngFor="let book of imgs;let indexOfelement=index;">  <img src="{{imgs[indexOfelement]}}" class="rounded" style="height: 500px;"></ng-template>
+
+        </owl-carousel-o>
+
+
+    </div>
+</section>
+
+
+
+</div>
+<div>
+
+
+</div>
+<div>
+

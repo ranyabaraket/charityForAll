@@ -1,0 +1,102 @@
+.container{
+  margin-top: 90px;
+  display: flex;
+}
+.w-auto {
+  width: auto!important;
+}
+
+ img {
+  width: 100%;
+  max-width: 100%;
+  height: auto!important;
+}
+.rightSide{
+flex: 1;
+margin-left: 70px;
+margin-top: 10px;
+}
+
+.leftSide{
+flex: 1;
+}
+.title{
+  color: #747ed1;
+  font-size: 15px;
+  margin-top: 50px;
+
+  font-family: "Manrope";
+ font-weight: bold;
+
+}
+.rightSide h1{
+color:#343F52
+}
+
+#accordionExample{
+  display: block;
+}
+.accordion-wrapper .card-header {
+  margin-bottom: 0;
+  background: 0 0;
+  border: 0;
+  padding: .9rem 1.3rem .85rem;
+}
+.accordion-wrapper .card.plain {
+  background: 0 0;
+  border: 0;
+  margin-bottom: 0;
+  box-shadow: none;
+}
+.accordion-wrapper .card-header button.collapsed {
+  color: #343f52;
+  font-size: 20px;
+
+}
+.card {
+  box-shadow: 0 0 0 0.05rem rgb(8 60 130 / 6%), 0 0 1.25rem rgb(30 34 40 / 4%);
+  border: 0;
+}
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(164,174,198,.2);
+  border-radius: .4rem;
+}
+.accordion-wrapper .card.plain .card-header button {
+  padding: 0 0 0 1.1rem;
+}
+.accordion-wrapper .card-header button {
+  cursor: pointer;
+  width: 100%;
+  padding: 0 0 0 1.2rem;
+  text-align: left;
+  margin: 0;
+  border: 20;
+  font-size: .85rem;
+
+  color: #3f78e0;
+  transition: all 150ms ease-in-out;
+  background: 0 0;
+}
+button:focus:not(:focus-visible) {
+  outline: 0;
+}
+button, select {
+  text-transform: none;
+}
+button, input, optgroup, select, textarea {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+button {
+  border-radius: 5;
+
+}

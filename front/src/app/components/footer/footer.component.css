@@ -1,0 +1,37 @@
+.footer{
+  margin-top: 200px;
+  background-color: #343F52;
+  padding-bottom: 200px;
+}
+
+h3{
+  font-size: 36px;
+  padding: 80px 450px 80px 0px;
+  font-family: "Manrop";
+  font-weight: bold;
+}
+.try{
+  padding: 13px;
+  background-color: #747ed1;
+  color: white;
+  width: 210px;
+  text-align: center;
+}
+a{text-decoration: none;color: white;}
+address ,p {color: white;}
+.tel{color: white;}
+.join{
+  background-color:#747ed1;
+  border: none;
+  width: 100px;
+}
+.mail{background-color:#343F52 ;
+color: #cacaca;
+border: solid 1px;
+
+}
+.mail:focus{background-color:#343F52 ;
+  color: #cacaca;
+  border: solid 1px;
+  border-radius: 500px;
+  }
