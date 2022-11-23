@@ -1,4 +1,3 @@
-
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -25,11 +24,11 @@ import { SimpleNotificationsModule } from 'angular2-notifications';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
-import { MatButtonModule} from '@angular/material/button';
+import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
-import {MatSidenavModule} from '@angular/material/sidenav';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
-import {MatDividerModule} from '@angular/material/divider';
+import { MatDividerModule } from '@angular/material/divider';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginDonneurComponent } from './components/login-donneur/login-donneur.component';
 import { DonneurProfileComponent } from './components/donneur-profile/donneur-profile.component';
@@ -42,40 +41,30 @@ import { VisionComponent } from './components/vision/vision.component';
 import { MissionComponent } from './components/mission/mission.component';
 import { ActualitesListComponent } from './components/actualites-list/actualites-list.component';
 import { FooterComponent } from './components/footer/footer.component';
-
-
-
-
-
+import { ActualiteDetailComponent } from './components/actualite-detail/actualite-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginAdminComponent,
     SidebarComponent,
-      ProfileAdminComponent,
-      HomeComponent,
-      AssociationsComponent,
-      CategoriesComponent,
-      RegisterComponent,
-      LoginDonneurComponent,
-      DonneurProfileComponent,
-      DonneursComponent,
-      ProfileAssocComponent,
-      ActualitesComponent,
-      HeaderComponent,
-      AccueilComponent,
-      VisionComponent,
-      MissionComponent,
-      ActualitesListComponent,
-      FooterComponent,
-
-
-
-
-
-
-
+    ProfileAdminComponent,
+    HomeComponent,
+    AssociationsComponent,
+    CategoriesComponent,
+    RegisterComponent,
+    LoginDonneurComponent,
+    DonneurProfileComponent,
+    DonneursComponent,
+    ProfileAssocComponent,
+    ActualitesComponent,
+    HeaderComponent,
+    AccueilComponent,
+    VisionComponent,
+    MissionComponent,
+    ActualitesListComponent,
+    FooterComponent,
+    ActualiteDetailComponent,
   ],
   imports: [
     BrowserModule,
@@ -86,20 +75,19 @@ import { FooterComponent } from './components/footer/footer.component';
     NgbModule,
 
     FlashMessagesModule.forRoot(),
-     NgbModule,
+    NgbModule,
 
-     BrowserAnimationsModule,
-     MatButtonModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
     MatDividerModule,
     MatSidenavModule,
     MatMenuModule,
     MatToolbarModule,
     MatIconModule,
     MatCardModule,
-     SimpleNotificationsModule.forRoot(),
-
+    SimpleNotificationsModule.forRoot(),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

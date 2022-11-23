@@ -1,11 +1,9 @@
-export class Actualite
-{
-  _id:Number;
-  nom:String;
+export class Actualite {
+  _id: Number;
+  nom: String;
 
-  designation:String;
-  image:String;
+  designation: String;
+  image: String;
 
-
-
+  comments: String[];
 }

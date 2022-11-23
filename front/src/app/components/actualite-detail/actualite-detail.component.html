@@ -1,0 +1,232 @@
+<div class="header bg-overlay">
+  <nav
+    class="navbar navbar-expand-sm"
+    [ngClass]="navbarfixed ? 'fixed' : 'nofixed'"
+  >
+    <div class="container">
+      <div class="logo">
+        <a href="#"
+          ><img
+            src="{{ cheminLogo }}"
+            alt="image"
+            style="height: 70px; width: 220px"
+        /></a>
+      </div>
+
+      <div class="nav-items">
+        <ul
+          class="navbar-nav"
+          [ngClass]="navbarfixed ? 'itemFixed' : 'itemNoFixed'"
+        >
+          <li class="nav-item active">
+            <a
+              class="nav-link"
+              href="#"
+              [ngClass]="navbarfixed ? 'itemFixed' : 'itemNoFixed'"
+              >ACCUEIL</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="#"
+              [ngClass]="navbarfixed ? 'itemFixed' : 'itemNoFixed'"
+              >ASSOCIATIONS</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="#"
+              [ngClass]="navbarfixed ? 'itemFixed' : 'itemNoFixed'"
+              >ACTUALITES</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="#"
+              [ngClass]="navbarfixed ? 'itemFixed' : 'itemNoFixed'"
+              >CONTACT</a
+            >
+          </li>
+
+          <button
+            class="rounded-pill btn-trial"
+            [ngClass]="navbarfixed ? 'btnFixed' : 'btnoFixed'"
+            routerLink="/Register"
+          >
+            S'inscrire
+          </button>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+<section>
+  <div class="cards">
+    <div class="container">
+      <div class="row">
+        <div style="cursor: pointer" class="card card-inverse card-info">
+          <img
+            class="card-img-top"
+            [src]="actualite.image"
+            style="width: 80%; height: 80%"
+          />
+          <div class="card-block">
+            <h4 class="card-title">{{ actualite.nom }}</h4>
+            <div class="card-text">
+              {{ actualite.designation }}
+            </div>
+          </div>
+          <div class="card-footer">
+            <small>14 Avril 2021</small>
+          </div>
+        </div>
+        <div class="card" style="padding-top: 70px">
+          <div class="row">
+            <div class="col-2">
+              <img
+                src="https://i.imgur.com/xELPaag.jpg"
+                width="70"
+                class="rounded-circle mt-2"
+              />
+            </div>
+
+            <div>
+              <div class="comment-box ml-2">
+                <h4>Add a comment</h4>
+
+                <div class="comment-area">
+                  <textarea
+                    [(ngModel)]="commentText"
+                    class="form-control"
+                    placeholder="what is your view?"
+                    rows="4"
+                  ></textarea>
+                </div>
+
+                <div class="comment-btns mt-2">
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="pull-right">
+                        <button
+                          class="btn btn-success btn-sm"
+                          (click)="saveComment()"
+                        >
+                          Send <i class="fa fa-long-arrow-right ml-1"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<link
+  href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
+  rel="stylesheet"
+/>
+
+<div class="container bootstrap snippets bootdey">
+  <div class="row">
+    <div class="panel panel-default widget">
+      <div class="panel-heading">
+        <span class="glyphicon glyphicon-comment"></span>
+        <h3 class="panel-title">Recent Comments</h3>
+      </div>
+      <div class="panel-body">
+        <ul class="list-group">
+          <li
+            class="list-group-item"
+            *ngFor="let comment of comments; let i = index"
+          >
+            <div class="row">
+              <div class="col-xs-2 col-md-1">
+                <img
+                  src="https://bootdey.com/img/Content/avatar/avatar1.png"
+                  class="img-circle img-responsive img-user"
+                  alt=""
+                />
+              </div>
+              <div class="col-xs-10 col-md-11">
+                <div>
+                  <div class="name">
+                    <b>{{ comment.user }}</b>
+                  </div>
+                  <div class="mic-info">
+                    on {{ comment.date | date: "medium" }}
+                  </div>
+                </div>
+                <div class="comment-text">
+                  <span *ngIf="show != i">{{ comment.text }}</span>
+                  <span *ngIf="show == i">
+                    <textarea [(ngModel)]="editText"></textarea>
+                  </span>
+                </div>
+
+                <!-- <div *ngIf="show == i">
+                  <textarea [(ngModel)]="editText"></textarea>
+                  <button
+                    class="btn btn-success btn-sm"
+                    (click)="editComment(comment, i)"
+                  >
+                    Save
+                  </button>
+                </div> -->
+                <div
+                  class="action"
+                  *ngIf="this.comments[i].user == this.username"
+                >
+                  <span *ngIf="show != i">
+                    <button
+                      type="button"
+                      class="btn btn-primary btn-xs"
+                      title="Edit"
+                      (click)="show = i; editText = this.comments[i].text"
+                    >
+                      Edit
+                    </button>
+
+                    <button
+                      type="button"
+                      class="btn btn-danger btn-xs"
+                      title="Delete"
+                      (click)="deleteComment(comment, i)"
+                    >
+                      Delete
+                    </button>
+                  </span>
+                  <span *ngIf="show == i">
+                    <button
+                      type="button"
+                      class="btn btn-primary btn-xs"
+                      (click)="editComment(comment, i)"
+                    >
+                      Save
+                    </button>
+
+                    <button
+                      type="button"
+                      class="btn btn-danger btn-xs"
+                      title="Delete"
+                      (click)="show = undefined"
+                    >
+                      Cancel
+                    </button>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

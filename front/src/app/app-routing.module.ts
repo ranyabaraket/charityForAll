@@ -1,3 +1,4 @@
+import { ActualiteDetailComponent } from './components/actualite-detail/actualite-detail.component';
 import { AccueilComponent } from './components/accueil/accueil.component';
 import { ActualitesComponent } from './components/actualites/actualites.component';
 import { ProfileAssocComponent } from './components/profile-assoc/profile-assoc.component';
@@ -16,28 +17,23 @@ import { RouterModule, Routes } from '@angular/router';
 import { ProfileAdminComponent } from './admin/profile-admin/profile-admin.component';
 
 const routes: Routes = [
-  {path : "EspaceAdmin/login",component:LoginAdminComponent},
-  {path : "EspaceDonneur/login",component:LoginDonneurComponent},
-  {path : "EspaceAdmin/profile",component:ProfileAdminComponent},
-  {path : "EspaceAdmin/associations",component:AssociationsComponent},
-  {path : "EspaceAdmin/categories",component:CategoriesComponent},
-  {path : "EspaceAdmin/actualites",component:ActualitesComponent},
-  {path : "EspaceAdmin/donneurs",component:DonneursComponent},
-  {path : "EspaceAssoc/profile",component:ProfileAssocComponent},
-{path:"Register",component:RegisterComponent},
-  {path : "EspaceDonneur/profile",component:ProfileDonneurComponent},
+  { path: 'EspaceAdmin/login', component: LoginAdminComponent },
+  { path: 'EspaceDonneur/login', component: LoginDonneurComponent },
+  { path: 'EspaceAdmin/profile', component: ProfileAdminComponent },
+  { path: 'EspaceAdmin/associations', component: AssociationsComponent },
+  { path: 'EspaceAdmin/categories', component: CategoriesComponent },
+  { path: 'EspaceAdmin/actualites', component: ActualitesComponent },
+  { path: 'EspaceAdmin/donneurs', component: DonneursComponent },
+  { path: 'EspaceAssoc/profile', component: ProfileAssocComponent },
+  { path: 'Register', component: RegisterComponent },
+  { path: 'EspaceDonneur/profile', component: ProfileDonneurComponent },
+  { path: 'actualite/:id', component: ActualiteDetailComponent },
 
-  {path : "",component:AccueilComponent},
-
-
-
-
-
-
+  { path: '', component: AccueilComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
