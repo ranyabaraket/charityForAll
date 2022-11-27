@@ -90,6 +90,18 @@ authenticateDonneur(user){
     )
     }
 
+
+//login-donneur
+authenticateResp(user){
+  let headers=new Headers();
+  return this.http.post(this.apiURL + '/api/users/login-respAssoc',JSON.stringify(user),this.httpOptions)
+  .pipe(
+    retry(1),
+    catchError(this.handleError)
+  )
+  }
+
+
 //storing data
 
 storeUserData(token,user){
@@ -134,5 +146,10 @@ connectedUser()
   return this.user
 }
 
-
+Role()
+{
+  this.user=JSON.parse(localStorage.getItem('user'))
+  if(this.user!=null)
+ { return this.user["role"]}else{return ""}
+}
 }

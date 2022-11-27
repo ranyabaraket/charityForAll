@@ -1,0 +1,53 @@
+<section  >
+  <h2 class="title">
+    Actualités
+  </h2>
+  <h3 class="subtitles">
+   Decouvrir nos actualités
+  </h3>
+
+  <div class="cardss">
+
+
+    <div class="container">
+      <div class="row" >
+
+
+
+
+        <div class="col-sm-6 col-md-4 col-lg-3 mt-4 cd"*ngFor="let dm of demandes"  >
+          <div class="card card-inverse card-info"  >
+              <img class="card-img-top" >
+              <div class="card-block" style="height:150px;">
+
+                  <h4 class="card-title">Association {{dm.assoc}}</h4>
+                  <div class="card-text">
+                    {{dm.description}}
+                  </div>
+              </div>
+              <div class="card-footer">
+                <a href="#" class="btn btn-primary" routerLink="/EspaceDonneur/donate"
+                [state]="dm" >Donate</a>
+
+              </div>
+          </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+      </div>
+</div>
+
+
+
+  </div>
+
+  </section>
+

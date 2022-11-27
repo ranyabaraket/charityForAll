@@ -41,6 +41,8 @@ const associations = require("./routes/api/associations");
 const categories = require("./routes/api/categories");
 const actualites = require("./routes/api/actualites");
 const admins = require("./routes/api/admins");
+const demandes = require("./routes/api/demandes");
+const dons = require("./routes/api/dons");
 //passport middleware
 
 
@@ -53,8 +55,8 @@ app.use("/api/associations", associations);
 
 app.use("/api/admins", admins);
 app.use("/api/categories", categories);
-
-
+app.use("/api/demandes", demandes);
+app.use("/api/dons", dons);
 
 // Port for production
 const port = process.env.PORT || 5000;

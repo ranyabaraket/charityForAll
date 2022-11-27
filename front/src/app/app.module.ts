@@ -42,6 +42,16 @@ import { VisionComponent } from './components/vision/vision.component';
 import { MissionComponent } from './components/mission/mission.component';
 import { ActualitesListComponent } from './components/actualites-list/actualites-list.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { BesoinsComponent } from './components/besoins/besoins.component';
+import { PublierComponent } from './components/publier/publier.component';
+import { PublierTestComponent } from './components/publier-test/publier-test.component';
+import { GestionDemandesComponent } from './components/gestion-demandes/gestion-demandes.component';
+import { ListBesoinsComponent } from './components/list-besoins/list-besoins.component';
+import { ListDemandeComponent } from './components/list-demande/list-demande.component';
+import { DonationComponent } from './components/donation/donation.component';
+import { GestionDonsComponent } from './components/gestion-dons/gestion-dons.component';
+import { DonnattionListComponent } from './components/donnattion-list/donnattion-list.component';
+
 
 
 
@@ -69,6 +79,16 @@ import { FooterComponent } from './components/footer/footer.component';
       MissionComponent,
       ActualitesListComponent,
       FooterComponent,
+      BesoinsComponent,
+      PublierComponent,
+      PublierTestComponent,
+      GestionDemandesComponent,
+      ListBesoinsComponent,
+      ListDemandeComponent,
+      DonationComponent,
+      GestionDonsComponent,
+      DonnattionListComponent,
+
 
 
 

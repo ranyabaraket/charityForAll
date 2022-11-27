@@ -1,0 +1,87 @@
+
+.fixed {
+  position: fixed;
+
+  transition: 0.2s linear;
+  top: 0px;
+  background-color:white;
+
+  z-index: 1;
+}
+
+.nofixed {
+  position: static;
+  transition: 0.2s linear;
+  top: -50px;
+  background-color: transparent;
+}
+.container{
+  margin-top: 2px;
+  display: flex;
+
+  justify-content: first baseline;
+  flex-wrap: nowrap;
+width: 100%;
+}
+.header{
+  padding-top: 1%;
+  width: 100%;
+  background: no-repeat center center;
+  background-size: cover;
+  position: relative;
+  z-index: 100;
+  color: white;
+  background-image: url("../../../assets/images/bg4.jpg");
+  background-attachment: fixed;
+  position: relative;
+  width: 100%;
+}
+.nav-link{
+  white-space: nowrap;
+  z-index:-2;
+  font-size: 20px;
+  font-weight: bolder;
+  margin-left: 15px;
+  margin-right: 10px;
+  color: white;
+
+
+}
+
+
+
+.btn-trial{
+  border-radius: 50%;
+  font-weight: 500  ;
+  height: 45px;
+  width: 110px;
+  padding: 15px,15px,15px,15px;
+  border: 0cm;
+  margin-left: 20px;
+}
+.navbar{
+  width: 100%;
+
+}
+
+
+.itemFixed{
+
+  color: white;
+
+}
+
+.itemNoFixed{
+
+  color: white;
+}
+
+
+.btnFixed{
+  background-color: #747ed1;
+  color: white;
+}
+
+.btnoFixed{
+  background-color: white;
+}

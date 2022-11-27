@@ -12,10 +12,10 @@
                 <a class="nav-link" href="#" [ngClass]="navbarfixed?'itemFixed':'itemNoFixed'">ACCUEIL</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#" [ngClass]="navbarfixed?'itemFixed':'itemNoFixed'">ASSOCIATIONS</a>
+                <a class="nav-link" href="#" [ngClass]="navbarfixed?'itemFixed':'itemNoFixed'"  *ngIf="notlogged || role!='RespAssoc'">ASSOCIATIONS</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#" [ngClass]="navbarfixed?'itemFixed':'itemNoFixed'">ACTUALITES</a>
+                <a class="nav-link" href="#" [ngClass]="navbarfixed?'itemFixed':'itemNoFixed'" >ACTUALITES</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#" [ngClass]="navbarfixed?'itemFixed':'itemNoFixed'">CONTACT</a>
@@ -23,7 +23,7 @@
 
 
 
-          <button  class="rounded-pill btn-trial" [ngClass]="navbarfixed?'btnFixed':'btnoFixed'" routerLink="/Register">S'inscrire</button>
+          <button  class="rounded-pill btn-trial" [ngClass]="navbarfixed?'btnFixed':'btnoFixed'" routerLink="/Register" >S'inscrire</button>
         </ul></div>
 
     </div>
