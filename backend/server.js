@@ -41,6 +41,8 @@ const associations = require("./routes/api/associations");
 const categories = require("./routes/api/categories");
 const actualites = require("./routes/api/actualites");
 const admins = require("./routes/api/admins");
+const contacts = require("./routes/api/contacts")
+const contactReplay = require("./routes/api/contactReplay")
 //passport middleware
 
 
@@ -53,6 +55,8 @@ app.use("/api/associations", associations);
 
 app.use("/api/admins", admins);
 app.use("/api/categories", categories);
+app.use("/api/contacts", contacts);
+app.use("/api/contactReplay",contactReplay)
 
 
 

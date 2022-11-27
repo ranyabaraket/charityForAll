@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 
 import { LoginAdminComponent } from './admin/login-admin/login-admin.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule , ReactiveFormsModule } from '@angular/forms';
 
 import { FlashMessagesModule } from 'flash-messages-angular';
 
@@ -42,6 +42,9 @@ import { VisionComponent } from './components/vision/vision.component';
 import { MissionComponent } from './components/mission/mission.component';
 import { ActualitesListComponent } from './components/actualites-list/actualites-list.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { TestComponent } from './components/test/test.component';
+import { InquiryComponent } from './admin/inquiry/inquiry.component';
+
 
 
 
@@ -69,6 +72,8 @@ import { FooterComponent } from './components/footer/footer.component';
       MissionComponent,
       ActualitesListComponent,
       FooterComponent,
+      TestComponent,
+      InquiryComponent,
 
 
 
@@ -82,6 +87,7 @@ import { FooterComponent } from './components/footer/footer.component';
     AppRoutingModule,
     CarouselModule,
     HttpClientModule,
+    ReactiveFormsModule,
     FormsModule,
     NgbModule,
 
@@ -99,7 +105,9 @@ import { FooterComponent } from './components/footer/footer.component';
      SimpleNotificationsModule.forRoot(),
 
   ],
-  providers: [],
+  providers: [
+    
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

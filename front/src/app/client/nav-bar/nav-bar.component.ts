@@ -15,10 +15,12 @@ export class NavBarComponent implements OnInit {
   errors:string;
   notlogged:boolean;
   isadmin:boolean;
-  constructor(private router:Router,private authService:AuthService, private flashMessage:FlashMessagesService) {this.user=new User();
+  constructor(private router:Router,private authService:AuthService, private flashMessage:FlashMessagesService) {
+    
+      this.user=new User();
 
   //console.log(this.authService.notLoggedIn())
-  this.notlogged=this.authService.notLoggedIn();
+    this.notlogged=this.authService.notLoggedIn();
 
   }
 

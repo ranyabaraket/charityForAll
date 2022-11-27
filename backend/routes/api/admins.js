@@ -4,6 +4,7 @@ const router = express.Router();
 // Add Mongoose Schema ./models/client
 // Client Model
 const Admin = require("../../models/admin");
+const User = require("../../models/user");
 const bcrypt = require("bcrypt");
 // First thing: module.exports = router;
 

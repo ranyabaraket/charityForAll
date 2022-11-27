@@ -134,5 +134,12 @@ connectedUser()
   return this.user
 }
 
+findme()
+{
+  this.user=JSON.parse(localStorage.getItem('user'))
+
+    if(this.user){return true}else{return false}
+}
+
 
 }

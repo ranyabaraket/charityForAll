@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router';
+import { User } from '../../model/user.model';
 
 @Component({
   selector: 'app-donneur-profile',
@@ -7,7 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DonneurProfileComponent implements OnInit {
 
-  constructor() { }
+  connectedUser: User;
+
+  constructor(private authService: AuthService, private router: Router) 
+  { 
+    
+    this.connectedUser=this.authService.connectedUser();  
+   
+
+    
+  }
 
   ngOnInit(): void {
   }
