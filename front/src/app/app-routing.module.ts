@@ -21,8 +21,14 @@ import { LoginAdminComponent } from './admin/login-admin/login-admin.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ProfileAdminComponent } from './admin/profile-admin/profile-admin.component';
+
 import { PublierComponent } from './components/publier/publier.component';
 import { PublierTestComponent } from './components/publier-test/publier-test.component';
+
+
+import { TestComponent } from './components/test/test.component';
+import { InquiryComponent } from './admin/inquiry/inquiry.component';
+
 
 const routes: Routes = [
   {path : "EspaceAdmin/login",component:LoginAdminComponent},
@@ -35,6 +41,7 @@ const routes: Routes = [
   {path : "EspaceAssoc/profile",component:ProfileAssocComponent},
   {path : "EspaceAssoc/demandes/besoins",component:BesoinsComponent},
 {path:"Register",component:RegisterComponent},
+
   {path : "EspaceDonneur/profile",component:DonneurProfileComponent},
   {path : "EspaceDonneur/donate",component:DonationComponent},
   {path : "EspaceAssoc/publier",component:PublierComponent},
@@ -42,6 +49,13 @@ const routes: Routes = [
   {path : "EspaceAdmin/dons",component:GestionDonsComponent},
   {path : "EspaceAdmin/dons/listeBesoins",component:DonnattionListComponent},
   {path : "EspaceAdmin/demandes/besoins",component:ListBesoinsComponent},
+
+  {path : "EspaceDonneur/profile",component:ProfileDonneurComponent},
+
+  {path : "Test",component:TestComponent},
+  {path : "EspaceAdmin/Inquiry",component:InquiryComponent},
+
+
   {path : "",component:AccueilComponent},
 
 

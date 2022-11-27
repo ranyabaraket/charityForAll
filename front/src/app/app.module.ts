@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 
 import { LoginAdminComponent } from './admin/login-admin/login-admin.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule , ReactiveFormsModule } from '@angular/forms';
 
 import { FlashMessagesModule } from 'flash-messages-angular';
 
@@ -42,6 +42,7 @@ import { VisionComponent } from './components/vision/vision.component';
 import { MissionComponent } from './components/mission/mission.component';
 import { ActualitesListComponent } from './components/actualites-list/actualites-list.component';
 import { FooterComponent } from './components/footer/footer.component';
+
 import { BesoinsComponent } from './components/besoins/besoins.component';
 import { PublierComponent } from './components/publier/publier.component';
 import { PublierTestComponent } from './components/publier-test/publier-test.component';
@@ -51,6 +52,10 @@ import { ListDemandeComponent } from './components/list-demande/list-demande.com
 import { DonationComponent } from './components/donation/donation.component';
 import { GestionDonsComponent } from './components/gestion-dons/gestion-dons.component';
 import { DonnattionListComponent } from './components/donnattion-list/donnattion-list.component';
+
+import { TestComponent } from './components/test/test.component';
+import { InquiryComponent } from './admin/inquiry/inquiry.component';
+
 
 
 
@@ -79,6 +84,7 @@ import { DonnattionListComponent } from './components/donnattion-list/donnattion
       MissionComponent,
       ActualitesListComponent,
       FooterComponent,
+
       BesoinsComponent,
       PublierComponent,
       PublierTestComponent,
@@ -88,6 +94,10 @@ import { DonnattionListComponent } from './components/donnattion-list/donnattion
       DonationComponent,
       GestionDonsComponent,
       DonnattionListComponent,
+
+
+      TestComponent,
+      InquiryComponent,
 
 
 
@@ -102,6 +112,7 @@ import { DonnattionListComponent } from './components/donnattion-list/donnattion
     AppRoutingModule,
     CarouselModule,
     HttpClientModule,
+    ReactiveFormsModule,
     FormsModule,
     NgbModule,
 
@@ -119,7 +130,9 @@ import { DonnattionListComponent } from './components/donnattion-list/donnattion
      SimpleNotificationsModule.forRoot(),
 
   ],
-  providers: [],
+  providers: [
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

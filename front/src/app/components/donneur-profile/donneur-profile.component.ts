@@ -1,4 +1,7 @@
 
+import { User } from '../../model/user.model';
+
+
 import { Component, OnInit,ViewChild } from '@angular/core';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { MatSidenav } from '@angular/material/sidenav';
@@ -11,8 +14,22 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./donneur-profile.component.css']
 })
 export class DonneurProfileComponent implements OnInit {
+
   cheminLogo="../../../assets/images/logo-lght.png";
-  constructor(private observer: BreakpointObserver,private router:Router,private authService:AuthService) {  }
+
+
+
+  connectedUser: User;
+
+  constructor(private observer: BreakpointObserver,private router:Router,private authService:AuthService)
+  {
+
+    this.connectedUser=this.authService.connectedUser();
+
+
+
+  }
+
 
   ngOnInit(): void {
 

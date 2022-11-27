@@ -146,10 +146,21 @@ connectedUser()
   return this.user
 }
 
+
 Role()
 {
   this.user=JSON.parse(localStorage.getItem('user'))
   if(this.user!=null)
  { return this.user["role"]}else{return ""}
 }
+
+findme()
+{
+  this.user=JSON.parse(localStorage.getItem('user'))
+
+    if(this.user){return true}else{return false}
+}
+
+
+
 }

@@ -1,0 +1,215 @@
+
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+
+
+
+<mat-toolbar class="mat-elevation-z8">
+    <button
+      mat-icon-button
+      *ngIf="sidenav.mode === 'over'"
+      (click)="sidenav.toggle()"
+    >
+      <mat-icon *ngIf="!sidenav.opened"> menu </mat-icon>
+      <mat-icon *ngIf="sidenav.opened"> close </mat-icon>
+    </button>
+   Charity For ALL
+  </mat-toolbar>
+  
+  <mat-sidenav-container>
+    <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8" opened>
+      <img
+        class="avatar mat-elevation-z8"
+        src="../../../assets/images/logo-admin.jpg"
+      />
+  
+      <h4 class="name">{{connectedUser.username}} </h4>
+      <p class="designation"> Administrateur</p>
+  
+      <mat-divider></mat-divider>
+  
+      <button mat-button class="menu-button" routerLink="/EspaceAdmin/profile">
+        <mat-icon>home</mat-icon>
+        <span>Home</span>
+      </button>
+      <button mat-button class="menu-button" routerLink="/EspaceAdmin/donneurs">
+        <mat-icon>person</mat-icon>
+        <span>Gestion des donneurs</span>
+      </button>
+      <button mat-button class="menu-button" routerLink="/EspaceAdmin/associations">
+        <mat-icon>people</mat-icon>
+        <span>Gestion des associations</span>
+      </button>
+      <button mat-button class="menu-button" routerLink="/EspaceAdmin/categories">
+        <mat-icon>tab</mat-icon>
+        <span>Gestion des Categories</span>
+      </button>
+      <button mat-button class="menu-button" routerLink="/EspaceAdmin/actualites">
+        <mat-icon>library_books</mat-icon>
+        <span>Gestion des actualites</span>
+      </button>
+      <button mat-button class="menu-button" routerLink="/EspaceAdmin/Inquiry">
+        <mat-icon>chat</mat-icon>
+        <span>Gestion des Contact</span>
+      </button>
+  
+      <mat-divider></mat-divider>
+  
+      <button mat-button class="menu-button" (click)="logout()">
+        <mat-icon>logout</mat-icon>
+        <span>Déconnecter</span>
+      </button>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <div class="content mat-elevation-z8">
+        <div class="ctn">
+  
+          <div class="container"  >
+            <div class="container-xl" >
+              <div class="table-responsive">
+                <div class="table-wrapper">
+                  <div class="table-title">
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <h2>Contact <b>Users</b></h2>
+                      </div>
+  
+                    </div>
+                  </div>
+                  <table *ngIf="queries.length" id="dtBasicExample" class="table table-striped table-hover">
+                    <thead>
+                      <tr>
+                        <th>No</th>
+                          <th>Username</th>
+                          <th>Title</th>
+                          <th>Message</th>
+                          <th>datetime</th>
+                            <th>Role</th>
+  
+                      <th colspan="3">Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let query of queries;let i = index">
+  
+                        <td>{{i + 1}}</td>
+                            <td>{{query.username}}</td>
+                            <td>{{query.title}}</td>
+                            <td>{{query.query}}</td>
+                            <td>{{query.insertedAt  | date: 'dd MMM yyyy hh:mm a' }}</td>
+                            <td>{{query.role}}</td>
+                            <td>
+                              <!-- For Reply (Button trigger modal) -->
+                              <button type="button" (click)="open(content1);setValue(query);setId(query._id)" class="btn btn-primary" >
+                                <i class="fas fa-reply"></i>
+                              </button>
+
+                              <button type="button" (click)="setCustomReplyMsgList(query._id);open(content)" class="btn btn-info float-end" data-toggle="modal" [attr.data-target]="'#showAllreply'">
+                                <i class="fas fa-history"></i>
+                              </button>
+                            </td>
+  
+                        </tr>
+  
+  
+                    </tbody>
+                  </table>
+  
+                </div>
+              </div>
+            </div>
+          </div>
+  
+      </div></div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  
+  <ng-template #content1 let-modal>
+    <span *ngFor="let query of queries">
+    <!-- Send Reply Modal -->
+    <div  *ngIf="id==query._id" >
+  
+        <div class="modal-content">
+          <div class="modal-header" style="background: cadetblue;">
+            <h1 class="modal-title m-0" id="replyLabel">Reply to {{query.username}}</h1>
+            
+          </div>
+          <div class="modal-body">
+            <form [formGroup]="replyMessageForm">
+              <div class="form-group">
+                <label for="replyMsg" class="col-form-label">Message:</label>
+                <textarea class="form-control" id="replyMsg" name="replyMsg" formControlName="replyMsg" placeholder="Write reply message"></textarea>
+              </div>
+              <button type="button" (click)="sendReplyMessage()" class="btn btn-primary float-end">Send</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+</span>
+  </ng-template>
+
+
+  <ng-template #content let-modal>
+
+    <div class="modal-content">
+      <div class="modal-header" style="background: cadetblue;">
+        <h2 class="modal-title m-0" id="showAllreplyLabel">History</h2>
+      
+      </div>
+      <div class="modal-body" style="background: darkgray;">
+        <div class="card rounded shadow border-0">
+          <div class="card-body p-0 bg-white rounded">
+            <div class="table-responsive">
+              <table *ngIf="customreplyMsgList.length" id="example" style="width:100%;margin-bottom: 0;" class="table table-striped table-bordered">
+                <thead>
+                  <tr>
+                    <th>No</th>
+                    <th>Reply Messages</th>
+                    <th>datetime</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let replyMsg of customreplyMsgList;let i = index">
+                      <td>{{i + 1}}</td>
+                      <td>{{replyMsg.replyMsg}}</td>
+                      <td>{{replyMsg.repliedAt  | date: 'dd MMM yyyy hh:mm a' }}</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div *ngIf="!customreplyMsgList.length">
+                <h3 class="m-3">No Data Available</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  
+  </ng-template>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    
