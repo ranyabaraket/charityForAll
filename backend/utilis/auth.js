@@ -274,6 +274,7 @@ const respLogin = async (userCreds, role, res) => {
           role: user.role,
           username: user.username,
           email: user.email,
+          nom:user.nom
         },
         SECRET,
         { expiresIn: "2592000" }
@@ -281,6 +282,8 @@ const respLogin = async (userCreds, role, res) => {
 
       let result = {
         username: user.username,
+        nom:user.nom,
+
         role: user.role,
         id:user._id,
         email: user.email,
@@ -294,7 +297,8 @@ const respLogin = async (userCreds, role, res) => {
           id:result.id,
           username:result.username,
           role:result.role,
-          email:result.email
+          email:result.email,
+          nom:user.nom,
         },
         token:result.token,
         message: "Hurray! You are now logged in.",

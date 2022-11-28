@@ -1,5 +1,7 @@
 import { Component, OnInit, HostListener } from '@angular/core';
+import { Router } from '@angular/router';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { AuthService } from 'src/app/services/auth.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -13,8 +15,14 @@ export class HeaderComponent implements OnInit {
     '../../../assets/images/charity2.webp',
     '../../../assets/images/charity1.webp',
   ];
+
+  notlogged: boolean;
   navbarfixed: boolean = false;
-  constructor() {}
+  role: String = '';
+  constructor(private router: Router, private authService: AuthService) {
+    this.notlogged = this.authService.notLoggedIn();
+    this.role = this.authService.Role();
+  }
 
   ngOnInit(): void {}
   customOptions: OwlOptions = {
@@ -50,5 +58,11 @@ export class HeaderComponent implements OnInit {
       this.cheminLogo = '../../../assets/images/logo-lght.png';
       this.navbarfixed = false;
     }
+  }
+
+  logout() {
+    this.authService.logout();
+
+    this.router.navigate(['/']);
   }
 }

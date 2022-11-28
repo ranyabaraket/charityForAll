@@ -13,14 +13,16 @@ export class ActualiteService {
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
-      Authorization: localStorage.getItem('id_token'),
+      Authorization: "localStorage.getItem('id_token')",
     }),
   };
 
   //get all associations
   readAll(): Observable<any> {
-    return this.http.get(this.apiURL, this.httpOptions);
+    return this.http.get(this.apiURL);
   }
+
+  //get all associations
 
   Add(act): Observable<Actualite> {
     return this.http.post<Actualite>(

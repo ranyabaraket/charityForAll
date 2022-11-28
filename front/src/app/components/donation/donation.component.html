@@ -1,0 +1,99 @@
+<div class="header bg-overlay">
+  <nav class="navbar navbar-expand-sm " >
+
+    <div class="container">
+      <div class="logo"><a href="#"><img src="{{cheminLogo}}" alt="image" style="height:70px ;width:220px" /></a></div>
+
+      <div class="nav-items">
+        <ul class="navbar-nav" >
+
+
+            <li class="nav-item active"  >
+                <a class="nav-link" href="#" >BESOINS</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"   >MES DONS</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"  >PROFILE</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" >CONTACT</a>
+            </li>
+
+
+
+          <button  class="rounded-pill btn-trial"  routerLink="/Register" >Deconnecter</button>
+        </ul></div>
+
+    </div>
+
+  </nav>
+  </div>
+<div>
+
+
+
+
+
+<h1 class="subtitles" style="text-align: center;">Donation for demande</h1>
+
+
+<div class="container-xl" style="margin-left:230px ;">
+	<div class="table-responsive">
+		<div class="table-wrapper">
+			<div class="table-title">
+				<div class="row">
+					<div class="col-sm-6">
+						<h2>Liste <b>Besoins</b></h2>
+					</div>
+					<div class="col-sm-6">
+
+            <button  class="btn btn-success" (click)="submit()"><i class="material-icons">check</i>Valider la donnation</button>
+					</div>
+				</div>
+			</div>
+			<table id="dtBasicExample" class="table table-striped table-hover">
+				<thead>
+					<tr>
+
+						<th scope="col">Num</th>
+				  <th scope="col">Description</th>
+          <th scope="col">Quantité demandé</th>
+          <th scope="col">Quantité à donner</th>
+
+					</tr>
+				</thead>
+				<tbody>
+					<tr *ngFor="let besoin of allBesoins; let i=index" >
+
+						<td [width]="300">
+              {{i+1}}
+            </td>
+            <td [width]="300" >
+              {{besoin.description}}
+            </td>
+            <td [width]="300">
+              {{besoin.quantite_restante}}
+            </td>
+            <td [width]="300">
+              <input type="number"    min="1" max={{besoin.quantite_restante}} [(ngModel)]="don.besoins[i]['quantite_donee']">
+            </td>
+
+            </tr>
+
+
+				</tbody>
+			</table>
+
+		</div>
+	</div>
+</div>
+
+<app-footer></app-footer>
+
+
+
+
+
+

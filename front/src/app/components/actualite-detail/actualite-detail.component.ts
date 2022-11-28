@@ -55,6 +55,9 @@ export class ActualiteDetailComponent implements OnInit {
     this.actServ
       .saveComment(this.actualiteId, this.commentText, this.username)
       .subscribe((res) => this.comments.push(res.comment));
+    this.comments = this.comments.sort(
+      (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+    );
   }
 
   editComment(comment: any, index: any) {

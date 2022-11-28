@@ -142,17 +142,17 @@ else
     this.modalService.dismissAll();
     console.log('Client updated successfully!');
 
-},err=>{
- this.flashMessage.show(err['error'].msg, { cssClass: 'alert-danger' } );
- this.modalService.dismissAll();
-this.authService.logout()
+    },err=>{
+      this.flashMessage.show(err['error'].msg, { cssClass: 'alert-danger' } );
+      this.modalService.dismissAll();
+      this.authService.logout()
 
-setTimeout(() => {
- this.router.navigate(['/EspaceAdmin/login'])
-}, 3000);
+        setTimeout(() => {
+        this.router.navigate(['/EspaceAdmin/login'])
+        }, 3000);
 
- console.log(err['error'].msg)
-})
+          console.log(err['error'].msg)
+          })
 }
 
 

@@ -13,6 +13,7 @@ export class ActualitesListComponent implements OnInit {
 
   ngOnInit(): void {
     this.readActs();
+    console.log(localStorage.getItem('id_token'))
   }
   readActs(): void {
     this.actServ.readAll().subscribe(

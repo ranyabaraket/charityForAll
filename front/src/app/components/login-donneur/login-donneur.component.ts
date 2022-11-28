@@ -17,6 +17,7 @@ export class LoginDonneurComponent implements OnInit {
   ngOnInit(): void {
   }
   login() {
+    var connected:Boolean=false ;
     this.authService.authenticateDonneur(this.user).subscribe (
       result => {
         // Handle result
@@ -24,17 +25,47 @@ export class LoginDonneurComponent implements OnInit {
         this.flashMessage.show('Admin connected!', { cssClass: 'alert-success' } )
         console.log(result)
         this.authService.storeUserData(result['token'],result['user'])
+        connected=true;
         this.router.navigate(['/EspaceDonneur/profile'])
       },
       error => {
         this.errors = error.message;
+        if(!connected){
+          this.authService.authenticateResp(this.user).subscribe (
+            result => {
+              // Handle result
 
-        //console.log("l erreeurr : "+error)
-        this.flashMessage.show(this.errors, { cssClass: 'alert-danger' } );
+              this.flashMessage.show('Admin connected!', { cssClass: 'alert-success' } )
+              console.log(result)
+              this.authService.storeUserData(result['token'],result['user'])
+              connected=true;
+              this.router.navigate(['/EspaceAssoc/profile'])
+            },
+            error => {
+              this.errors = error.message;
+
+              //console.log("l erreeurr : "+error)
+              this.flashMessage.show(this.errors, { cssClass: 'alert-danger' } );
+            },
+            () => {
+              // No errors, route to new page
+            }
+          );
+        }
+
+
+
+
+        else{//console.log("l erreeurr : "+error)
+          this.flashMessage.show(this.errors, { cssClass: 'alert-danger' } );}
+
+
       },
       () => {
         // No errors, route to new page
       }
     );
+
+
   }
 }

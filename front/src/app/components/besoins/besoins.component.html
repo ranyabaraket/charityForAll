@@ -1,0 +1,251 @@
+<mat-toolbar class="mat-elevation-z8">
+  <button
+    mat-icon-button
+    *ngIf="sidenav.mode === 'over'"
+    (click)="sidenav.toggle()"
+  >
+    <mat-icon *ngIf="!sidenav.opened"> menu </mat-icon>
+    <mat-icon *ngIf="sidenav.opened"> close </mat-icon>
+  </button>
+ Charity For ALL
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8" opened>
+    <img
+    style="background-color: white;"
+      class="avatar mat-elevation-z8"
+      src="../../../assets/images/user.webp"
+    />
+
+    <h4 class="name"> </h4>
+    <p class="designation" style="font-size: 30px;">  {{user.username}} </p>
+
+    <mat-divider></mat-divider>
+
+    <button mat-button class="menu-button" routerLink="/home">
+      <mat-icon>home</mat-icon>
+      <span>Demandes</span>
+    </button>
+    <button mat-button class="menu-button" routerLink="/EspaceAdmin/donneurs">
+      <mat-icon>mail</mat-icon>
+      <span>Contact</span>
+    </button>
+    <button mat-button class="menu-button" routerLink="/EspaceAssoc/publier">
+      <mat-icon>tab</mat-icon>
+      <span>Publier</span>
+    </button>
+    <button mat-button class="menu-button" routerLink="/EspaceAdmin/categories">
+      <mat-icon>person</mat-icon>
+      <span>Profile</span>
+    </button>
+
+    <mat-divider></mat-divider>
+
+    <button mat-button class="menu-button" >
+      <mat-icon>logout</mat-icon>
+      <span>Déconnecter</span>
+    </button>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="content mat-elevation-z8">
+      <div class="ctn" style="width: 100%;">
+
+        <div class="container"  >
+          <div class="container-xl" >
+            <div class="table-responsive">
+              <div class="table-wrapper">
+                <div class="table-title">
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <h2>Liste des  <b>Besoins de demande de {{entries[1][1]}}</b></h2>
+                    </div>
+                    <div class="col-sm-6">
+
+                      <button  class="btn btn-success" *ngIf="entries[5][1]=='Pending'" (click)="open(addCout)" ><i class="material-icons">&#xE147;</i>Ajouter un autre besoin</button>
+                    </div>
+                  </div>
+                </div>
+                <table id="dtBasicExample" class="table table-striped table-hover" >
+                  <thead>
+                    <tr>
+
+                      <th scope="col">Description</th>
+                      <th scope="col">Quantite initial</th>
+                      <th scope="col">Quantite restante</th>
+                    <th scope="col">Categorie</th>
+
+                    <th colspan="3" *ngIf="entries[5][1]=='Pending'"style="text-align: center;">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let besoin of allBesoins ">
+
+                      <td [width]="300" >
+                        {{besoin['description']}}
+                      </td>
+                      <td [width]="300">
+                        {{besoin['quantite_initial']}}
+                      </td>
+                      <td [width]="300">
+                        {{besoin['quantite_restante']}}
+                      </td>
+                      <td [width]="300">
+                        {{besoin['categorie']}}
+
+                      </td>
+
+                      <td *ngIf="entries[5][1]=='Pending'"[width]="300" style="text-align: center;">
+
+
+                    <a    class="edit btn" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+
+                        <a   class="delete btn" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+
+
+
+                    </td>
+                      </tr>
+
+
+                  </tbody>
+                </table>
+
+              </div>
+            </div>
+          </div>
+          <ng-template #addCout let-modal>
+            <div class="modal-header">
+            <h4 class="modal-title" id="modal-basic-title">Nouveau categorie</h4>
+            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+            <form #f="ngForm"  novalidate>
+              <div class="form-group">
+              <label for="Designation">Description</label>
+              <div class="input-group">
+                <input id="Description" class="form-control" name="Description" [(ngModel)]="besoins.description">
+              </div>
+              </div>
+              <div class="form-group">
+              <label for="Total">Quantite</label>
+              <div class="input-group">
+                <input id="Total" class="form-control"   name="Quantite_initial" [(ngModel)]="besoins.quantite_initial">
+              </div>
+              </div>
+
+              <div class="form-group">
+                <label for="Total">Categorie</label>
+                <div class="input-group">
+                  <select id="Total" class="form-control"   name="categorie" [(ngModel)]="besoins.categorie">
+                    <option>Education</option>
+                    <option>Vetements </option>
+                  </select>
+                </div></div>
+
+
+            </form>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Cancel</button>
+            <div class="border text-center">
+              <button data-dismiss="modal" class="btn btn-info" (click)="add()" >Submit</button>
+              </div>
+            </div></ng-template>
+        </div>
+
+
+        <ng-template #addCout let-modal>
+          <div class="modal-header">
+            <h4 class="modal-title" id="modal-basic-title">Nouveau categorie</h4>
+            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form #f="ngForm"  novalidate>
+              <div class="form-group">
+                <label for="Designation">Nom</label>
+                <div class="input-group">
+                  <input id="Designation" class="form-control" name="designation" >
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="Total">Description</label>
+                <div class="input-group">
+                  <input id="Total" class="form-control"   name="total" >
+                </div>
+              </div>
+
+
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Cancel</button>
+            <div class="border text-center">
+              <button data-dismiss="modal" class="btn btn-info"  >Submit</button>
+              </div>
+          </div>
+
+        </ng-template>
+
+
+        <ng-template #contentDelete let-modal>
+          <div class="modal-header">
+            <h4 class="modal-title">Confirm Delete</h4>
+            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <h2>Are you sure you want to delete this client.</h2>
+            <div class="border text-center">
+              <button data-dismiss="modal" class="btn btn-danger" >Yes, Delete!</button>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Annuler</button>
+          </div>
+        </ng-template>
+
+
+
+
+        <ng-template #update let-modal>
+          <div class="modal-header">
+            <h4 class="modal-title" id="modal-basic-title">Modifier Cout</h4>
+            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form #f="ngForm"  novalidate>
+              <div class="form-group">
+                <label for="Designation">Nom</label>
+                <div class="input-group">
+                  <input id="Designation" class="form-control" name="designation">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="Description">Description</label>
+                <div class="input-group">
+                  <input id="Description" class="form-control"  name="description">
+                </div>
+              </div>
+
+
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Annuler</button>
+            <div class="border text-center">
+              <button data-dismiss="modal" class="btn btn-info"  >Modifer</button>
+              </div>
+          </div>
+
+        </ng-template>
+</div></div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

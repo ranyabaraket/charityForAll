@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 
 import { LoginAdminComponent } from './admin/login-admin/login-admin.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { FlashMessagesModule } from 'flash-messages-angular';
 
@@ -41,7 +41,21 @@ import { VisionComponent } from './components/vision/vision.component';
 import { MissionComponent } from './components/mission/mission.component';
 import { ActualitesListComponent } from './components/actualites-list/actualites-list.component';
 import { FooterComponent } from './components/footer/footer.component';
+
 import { ActualiteDetailComponent } from './components/actualite-detail/actualite-detail.component';
+
+import { BesoinsComponent } from './components/besoins/besoins.component';
+import { PublierComponent } from './components/publier/publier.component';
+import { PublierTestComponent } from './components/publier-test/publier-test.component';
+import { GestionDemandesComponent } from './components/gestion-demandes/gestion-demandes.component';
+import { ListBesoinsComponent } from './components/list-besoins/list-besoins.component';
+import { ListDemandeComponent } from './components/list-demande/list-demande.component';
+import { DonationComponent } from './components/donation/donation.component';
+import { GestionDonsComponent } from './components/gestion-dons/gestion-dons.component';
+import { DonnattionListComponent } from './components/donnattion-list/donnattion-list.component';
+
+import { TestComponent } from './components/test/test.component';
+import { InquiryComponent } from './admin/inquiry/inquiry.component';
 
 @NgModule({
   declarations: [
@@ -65,12 +79,43 @@ import { ActualiteDetailComponent } from './components/actualite-detail/actualit
     ActualitesListComponent,
     FooterComponent,
     ActualiteDetailComponent,
+
+    ProfileAdminComponent,
+    HomeComponent,
+    AssociationsComponent,
+    CategoriesComponent,
+    RegisterComponent,
+    LoginDonneurComponent,
+    DonneurProfileComponent,
+    DonneursComponent,
+    ProfileAssocComponent,
+    ActualitesComponent,
+    HeaderComponent,
+    AccueilComponent,
+    VisionComponent,
+    MissionComponent,
+    ActualitesListComponent,
+    FooterComponent,
+
+    BesoinsComponent,
+    PublierComponent,
+    PublierTestComponent,
+    GestionDemandesComponent,
+    ListBesoinsComponent,
+    ListDemandeComponent,
+    DonationComponent,
+    GestionDonsComponent,
+    DonnattionListComponent,
+
+    TestComponent,
+    InquiryComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     CarouselModule,
     HttpClientModule,
+    ReactiveFormsModule,
     FormsModule,
     NgbModule,
 
@@ -87,6 +132,7 @@ import { ActualiteDetailComponent } from './components/actualite-detail/actualit
     MatCardModule,
     SimpleNotificationsModule.forRoot(),
   ],
+
   providers: [],
   bootstrap: [AppComponent],
 })
